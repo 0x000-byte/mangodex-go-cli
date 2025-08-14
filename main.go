@@ -178,7 +178,7 @@ func getUserInfo(accessToken string) (*User, error) {
 }
 
 func refreshToken(refreshToken string) (*TokenResponse, error) {
-	payload := map[string]string{"token": refreshToken}
+	payload := map[string]string{"refreshToken": refreshToken}
 	body, _ := json.Marshal(payload)
 
 	req, _ := http.NewRequest(http.MethodPost, baseURL+"/auth/refresh", bytes.NewReader(body))
